@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:smart_note_app/Auth/firebase_auth_services.dart';
 import 'package:smart_note_app/global/toast.dart';
+import 'package:smart_note_app/screens/home.dart';
 import 'package:smart_note_app/screens/sign_up_page.dart';
 import 'package:smart_note_app/widgets/form_container_widget.dart';
 // import 'package:flutter/cupertino.dart';
@@ -175,7 +176,10 @@ class _LoginPageState extends State<LoginPage> {
 
     if (user != null) {
       showToast(message: "User is successfully signed in");
-      Navigator.pushNamed(context, "/home");
+      Navigator.push(context, MaterialPageRoute(builder: 
+      (context) => HomeScreen()),
+      );
+      // Navigator.pushNamed(context, "/home");
     } else {
       showToast(message: "some error occured");
     }
@@ -200,7 +204,10 @@ class _LoginPageState extends State<LoginPage> {
         );
 
         await _firebaseAuth.signInWithCredential(credential);
-        Navigator.pushNamed(context, "/home");
+        Navigator.push(context, MaterialPageRoute(builder: 
+      (context) => HomeScreen()),
+      );
+        // Navigator.pushNamed(context, "/home");
       }
 
     }catch(e) {

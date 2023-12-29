@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:smart_note_app/firebase_options.dart';
 import 'package:smart_note_app/screens/home.dart';
 
+import 'screens/login_page.dart';
+
 
 Future <void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +19,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: LoginPage(),
     );
   }
 }

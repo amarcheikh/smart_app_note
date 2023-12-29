@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_note_app/Auth/firebase_auth_services.dart';
 import 'package:smart_note_app/global/toast.dart';
+import 'package:smart_note_app/screens/home.dart';
 import 'package:smart_note_app/screens/login_page.dart';
 import 'package:smart_note_app/widgets/form_container_widget.dart';
 
@@ -142,7 +143,10 @@ setState(() {
 });
     if (user != null) {
       showToast(message: "User is successfully created");
-      Navigator.pushNamed(context, "/home");
+      Navigator.push(context, MaterialPageRoute(builder: 
+      (context) => HomeScreen()),
+      );
+      // Navigator.pushNamed(context, "/home");
     } else {
       showToast(message: "Some error happend");
     }
