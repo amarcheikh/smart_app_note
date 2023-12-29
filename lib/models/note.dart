@@ -12,7 +12,6 @@ class Note {
   });
 }
 
-
 List<Note> sampleNotes = [
   Note(
     id: 0,
